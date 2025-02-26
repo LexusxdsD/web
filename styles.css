@@ -12,8 +12,9 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* Установлено в row для расположения в один ряд */
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Центрирует элементы по вертикали */
     padding: 15px;
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -21,19 +22,19 @@ header {
 
 nav ul {
     display: flex;
-    flex-direction: column;
-    padding: 5px 0;
+    flex-direction: row; /* Изменено на row для горизонтального расположения */
+    padding: 0; /* Убрал отступы */
 }
 
 nav ul li {
-    margin: 3px 0;
+    margin: 0 10px; /* Увеличены отступы между элементами навигации */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px;
+    padding: 8px 12px; /* Увеличены отступы для удобства нажатия */
     transition: background 0.3s;
 }
 
@@ -196,12 +197,12 @@ footer {
 /* Медиазапросы для адаптивности */
 @media (max-width: 767px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* На мобильных устройствах может быть столбик */
         align-items: flex-start;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* На мобильных устройствах навигация в столбик */
         width: 100%; /* Ширина навигации 100% */
     }
 
@@ -241,7 +242,7 @@ footer {
     }
 
     nav ul {
-        flex-direction: row;
+        flex-direction: row; /* Горизонтальное расположение на планшетах */
     }
 
     .image-gallery {
@@ -265,7 +266,7 @@ footer {
     }
 
     nav ul {
-        flex-direction: row;
+        flex-direction: row; /* Горизонтальное расположение на десктопах */
     }
 
     .image-gallery {
