@@ -91,18 +91,17 @@ h2 {
 
 .image-gallery {
     display: flex;
-    flex-wrap: wrap; /* Позволяет изображениями оборачиваться */
-    justify-content: center; /* Центрирует изображения */
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 .image-item {
     text-align: center;
-    margin: 10px; /* Увеличенные отступы между изображениями */
+    margin: 5px 0;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 5px;
     transition: transform 0.3s;
-    flex: 1 1 200px; /* Гибкая ширина для адаптивности */
 }
 
 .image-item:hover {
@@ -208,6 +207,14 @@ footer {
 
     nav a {
         padding: 10px; /* Увеличенные отступы для удобства нажатия */
+    }
+
+    .image-gallery {
+        flex-direction: column; /* Изображения в столбик на мобильных */
+    }
+
+    .btn {
+        width: 100%; /* Кнопки занимают всю ширину на мобильных */
     }
 
     main {
