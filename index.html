@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="hidden">
+    <header>
+        <div class="logo">
+            <h1>Мой Сайт</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p class="intro">Привет! Меня зовут [Ваше имя], и я увлечённый [ваша профессия или хобби].</p>
+            <p>Ниже представлены некоторые из моих любимых работ:</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="img/image1.jpg" alt="Описание изображения 1">
+                    <p>Описание изображения 1</p>
+                </div>
+                <div class="image-item">
+                    <img src="img/image2.jpg" alt="Описание изображения 2">
+                    <p>Описание изображения 2</p>
+                </div>
+                <div class="image-item">
+                    <img src="img/image3.jpg" alt="Описание изображения 3">
+                    <p>Описание изображения 3</p>
+                </div>
+            </div>
+            <button class="btn" id="moreInfoBtn">Узнать больше</button>
+        </section>
+
+        <!-- Модальное окно -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Дополнительная информация</h2>
+                <p>Здесь вы можете добавить больше информации о себе.</p>
+            </div>
+        </div>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <p>Перечислите свои навыки здесь.</p>
+            <button class="btn">Посмотреть навыки</button>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <p>Опишите свои проекты здесь.</p>
+            <button class="btn">Посмотреть проекты</button>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Ваши контактные данные.</p>
+            <button class="btn">Связаться со мной</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Мой сайт. Все права защищены.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            document.body.classList.remove('hidden'); // Убираем класс hidden при загрузке
+            document.body.classList.add('fade-in');   // Добавляем класс fade-in для анимации
+
+            // Модальное окно
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("moreInfoBtn");
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function() {
+                modal.style.display = "block"; // Показываем модальное окно
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none"; // Закрываем модальное окно
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none"; // Закрываем модальное окно при клике вне его
+                }
+            }
+        };
+    </script>
+</body>
+</html>
