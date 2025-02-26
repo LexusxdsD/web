@@ -46,11 +46,9 @@
 
         <!-- Модальное окно -->
         <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Дополнительная информация</h2>
-                <p>Здесь вы можете добавить больше информации о себе.</p>
-            </div>
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage" alt="Модальное изображение">
+            <div class="caption" id="caption"></div>
         </div>
 
         <section id="skills">
@@ -83,12 +81,20 @@
 
             // Модальное окно
             var modal = document.getElementById("myModal");
-            var btn = document.getElementById("moreInfoBtn");
-            var span = document.getElementsByClassName("close")[0];
+            var modalImage = document.getElementById("modalImage");
+            var captionText = document.getElementById("caption");
 
-            btn.onclick = function() {
-                modal.style.display = "block"; // Показываем модальное окно
-            }
+            // Обработка клика по изображениям
+            var images = document.querySelectorAll(".image-item img");
+            images.forEach(function(img) {
+                img.onclick = function() {
+                    modal.style.display = "block"; // Показываем модальное окно
+                    modalImage.src = this.src;     // Устанавливаем источник изображения
+                    captionText.innerHTML = this.alt; // Устанавливаем подпись
+                }
+            });
+
+            var span = document.getElementsByClassName("close")[0];
 
             span.onclick = function() {
                 modal.style.display = "none"; // Закрываем модальное окно
@@ -98,6 +104,26 @@
                 if (event.target == modal) {
                     modal.style.display = "none"; // Закрываем модальное окно при клике вне его
                 }
+            }
+
+            // Обработка скролла для переключения изображений
+            modalImage.addEventListener('wheel', function(event) {
+                event.preventDefault(); // Предотвращаем прокрутку страницы
+                if (event.deltaY < 0) {
+                    // Прокрутка вверх (показать предыдущее изображение)
+                    showImage(-1);
+                } else {
+                    // Прокрутка вниз (показать следующее изображение)
+                    showImage(1);
+                }
+            });
+
+            // Функция для показа следующего или предыдущего изображения
+            function showImage(direction) {
+                var currentIndex = Array.from(images).findIndex(img => img.src === modalImage.src);
+                var newIndex = (currentIndex + direction + images.length) % images.length; // Циклический переход
+                modalImage.src = images[newIndex].src;
+                captionText.innerHTML = images[newIndex].alt;
             }
         };
     </script>
