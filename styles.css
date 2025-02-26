@@ -111,7 +111,9 @@ h2 {
 }
 
 .image-item img {
-    width: 100%;
+    width: 80%; /* Установите нужный процент */
+    max-width: 200px; /* Установите максимальную ширину */
+    height: auto; /* Сохраняет пропорции изображения */
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
