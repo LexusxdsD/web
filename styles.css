@@ -122,14 +122,14 @@ body {
 
 .text-content p {
     margin-bottom: 15px;
-    font-size: 20px;  /* Уменьшаем размер шрифта */
+    font-size: 18px;  /* Уменьшаем размер шрифта */
     font-weight: bold;
     line-height: 1.4;
 }
 
 /* Кнопки */
 .btn {
-    background-color: transparent;
+    background-color: #800080;  /* Устанавливаем фон фиолетового цвета */
     color: var(--text-color);
     border: 2px solid var(--primary-color);
     padding: 12px 20px;  /* Уменьшаем padding */
@@ -141,8 +141,19 @@ body {
 }
 
 .btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--hover-color);
     transform: scale(1.05);
+}
+
+/* Кнопка Buy Now */
+.btn.buy-now {
+    background-color: transparent;  /* Без фона по умолчанию */
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn.buy-now:hover {
+    background-color: #800080;  /* При наведении меняем фон на фиолетовый */
 }
 
 /* Социальные кнопки */
@@ -152,6 +163,7 @@ body {
     gap: 15px;  /* Отступы между кнопками */
     background-color: transparent;
     margin-top: 20px;
+    flex-wrap: wrap;  /* Даем возможность кнопкам переноситься на новую строку, если нужно */
 }
 
 .social-container nav a {
@@ -165,10 +177,6 @@ body {
     transition: background 0.3s;
 }
 
-.social-container nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Слегка затемняем при наведении */
-}
-
 /* Навигация */
 nav a {
     color: var(--text-color);
@@ -177,12 +185,6 @@ nav a {
     font-size: 30px;  /* Уменьшаем размер шрифта */
     font-weight: bold;
     font-family: 'Comfortaa', sans-serif;
-}
-
-footer {
-    text-align: center;
-    padding: 8px;
-    background-color: var(--background-color);
 }
 
 /* Стили для изображений в галерее */
@@ -250,7 +252,6 @@ footer {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
 
 /* Мобильные стили */
 @media (max-width: 767px) {
@@ -260,7 +261,13 @@ footer {
     }
 
     .logo h1 {
-        font-size: 40px;
+        font-size: 36px;  /* Уменьшаем размер шрифта для мобильных */
+    }
+
+    /* Логотип */
+    .logo-image {
+        width: 50px;  /* Уменьшаем размер логотипа для мобильных */
+        height: auto;
     }
 
     nav a {
@@ -269,7 +276,9 @@ footer {
 
     /* Социальные кнопки */
     .social-container {
-        flex-direction: column;
+        flex-direction: row;  /* Теперь кнопки Twitter и Telegram будут по горизонтали */
+        justify-content: center;
+        gap: 15px;
     }
 
     .social-container nav a {
@@ -290,5 +299,11 @@ footer {
 
     .text-content p {
         font-size: 18px;
+    }
+
+    /* Кнопки */
+    .btn {
+        padding: 10px 15px;  /* Уменьшаем padding для кнопок */
+        font-size: 16px;  /* Уменьшаем размер шрифта */
     }
 }
