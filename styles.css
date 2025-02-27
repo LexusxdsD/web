@@ -42,9 +42,9 @@ header {
 }
 
 .logo-image {
-    width: 80px; /* Уменьшение ширины логотипа */
+    width: 120px; /* Ширина логотипа для ПК */
     height: auto; /* Автоматическая высота */
-    margin-right: 10px; /* Уменьшение отступа справа от логотипа */
+    margin-right: 20px; /* Отступ справа от логотипа */
 }
 
 .main-title {
@@ -58,14 +58,15 @@ header {
 
 .slogan-container {
     display: flex;
+    flex-direction: column; /* Упорядочиваем элементы в колонку */
     align-items: center; /* Центрирование по вертикали */
-    justify-content: center; /* Центрирование по горизонтали */
     margin-bottom: 20px; /* Отступ снизу */
 }
 
 .slogan-text {
     font-size: 50px; /* Увеличенный размер слогана */
     font-weight: bold; /* Жирное начертание */
+    text-align: center; /* Центрируем текст */
 }
 
 .slogan-image {
@@ -236,7 +237,7 @@ nav a {
     }
 
     .logo-image {
-        max-width: 100%; /* Ограничиваем ширину логотипа на мобильных устройствах */
+        width: 100px; /* Ширина логотипа на мобильных устройствах */
         height: auto; /* Автоматическая высота */
     }
 
@@ -246,11 +247,12 @@ nav a {
 
     .slogan-text {
         font-size: 24px; /* Уменьшение размера слогана */
+        text-align: center; /* Центрируем текст на мобильных устройствах */
     }
 
     .slogan-image {
         width: 100%; /* Полная ширина для адаптивности */
-        max-width: none; /* Убираем максимальную ширину */
+        height: auto; /* Автоматическая высота */
     }
 
     .content-container {
