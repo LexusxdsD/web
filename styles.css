@@ -1,0 +1,310 @@
+:root {
+    --primary-color: #800080; /* Основной цвет кнопок */
+    --hover-color: #6a006a; /* Цвет кнопки при наведении */
+    --background-color: rgba(128, 0, 128, 0.8); /* Цвет фона для подвала */
+    --text-color: white; /* Цвет текста */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(to bottom left, black 50%, rgba(128, 0, 128, 1));
+    padding: 20px; /* Уменьшенный отступ */
+    animation: fadeIn 1s ease forwards; /* Анимация появления всего тела сайта */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Распределение пространства между элементами */
+    flex-wrap: wrap; /* Обеспечиваем обтекание на маленьких экранах */
+    padding: 20px; /* Паддинг для шапки */
+}
+
+.main-title {
+    font-size: 48px; /* Увеличенный размер заголовка */
+    font-weight: 800; /* Жирное начертание */
+    color: var(--text-color); /* Цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    margin: 40px 0; /* Отступ сверху и снизу для размещения ниже шапки */
+    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa */
+}
+
+.slogan-container {
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: space-between; /* Распределение пространства между элементами */
+    margin-bottom: 20px; /* Отступ снизу */
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateX(-20px); /* Сдвигаем вбок для эффекта появления */
+    animation: slideInRight 0.5s forwards; /* Анимация появления */
+    animation-delay: 0.5s; /* Задержка для последовательного появления */
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Начинаем слева */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Двигаемся на место */
+    }
+}
+
+.slogan-text {
+    font-size: 50px; /* Увеличенный размер слогана */
+    font-weight: bold; /* Жирное начертание */
+}
+
+.slogan-image {
+    width: 100%; /* Полная ширина на мобильных устройствах */
+    max-width: 600px; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
+    margin-left: 20px; /* Отступ слева от текста */
+    border-radius: 5px; /* Скругление углов изображения */
+    opacity: 0; /* Начальная непрозрачность */
+    animation: fadeInImage 0.5s forwards; /* Анимация появления */
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Уменьшаем изображение */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Возвращаем в норму */
+    }
+}
+
+.full-width-divider {
+    height: 4px; /* Высота разделителя */
+    background-color: rgba(255, 255, 255, 0.5); /* Цвет разделителя */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    width: 100%; /* Полная ширина */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column; /* Положение элементов в колонку */
+    align-items: center; /* Выравнивание по центру по горизонтали */
+    margin: 40px 0; /* Отступы сверху и снизу */
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(20px); /* Сдвигаем вниз для эффекта появления */
+    animation: slideIn 0.5s forwards; /* Анимация появления */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Начинаем ниже */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Двигаемся на место */
+    }
+}
+
+.frog-image {
+    width: 100%; /* Полная ширина на мобильных устройствах */
+    max-width: 600px; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
+    margin-right: 40px; /* Увеличение отступа справа от изображения */
+    border-radius: 10px; /* Скругление углов изображения */
+    opacity: 0; /* Начальная непрозрачность */
+    animation: fadeInImage 0.5s forwards; /* Анимация появления */
+}
+
+.text-content {
+    color: var(--text-color); /* Цвет текста */
+    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa */
+    max-width: 800px; /* Увеличение ширины текста для уменьшения столбиков */
+    padding: 0 20px; /* Отступы по бокам для текстового контента */
+}
+
+.text-content p {
+    margin-bottom: 15px; /* Уменьшение отступа между абзацами */
+    font-size: 24px; /* Увеличение размера шрифта */
+    font-weight: bold; /* Установка жирного начертания */
+    line-height: 1.4; /* Увеличение межстрочного интервала для лучшей читаемости */
+}
+
+.section-title {
+    font-size: 48px; /* Увеличенный размер шрифта для заголовка */
+    font-weight: bold; /* Жирное начертание */
+    font-family: 'Sigmar', cursive; /* Шрифт для заголовка */
+    color: var(--text-color); /* Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+    text-align: center; /* Выравнивание по центру */
+}
+
+.divider {
+    height: 2px; /* Высота разделителя */
+    background-color: rgba(255, 255, 255, 0.5); /* Цвет разделителя */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.logo-image {
+    width: 100px; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота */
+    margin-right: 20px; /* Отступ справа от логотипа */
+    border-radius: 5px; /* Скругление углов логотипа */
+}
+
+.logo h1 {
+    font-size: 70px; /* Размер шрифта для названия */
+    font-weight: bold; /* Жирное начертание */
+    font-family: 'Sigmar', cursive; /* Шрифт для названия */
+    color: var(--text-color); /* Цвет текста */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* Обеспечиваем обтекание на маленьких экранах */
+}
+
+nav ul li {
+    margin-left: 20px; /* Уменьшенный отступ между элементами */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px; /* Уменьшенные отступы для кнопок */
+    font-size: 20px; /* Уменьшенный размер шрифта */
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa к навигационным ссылкам */
+}
+
+.social-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Уменьшенный отступ */
+    padding: 10px; /* Уменьшенные отступы */
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+.social-container nav a {
+    color: black;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 20px; /* Уменьшенный размер шрифта */
+    font-weight: bold;
+    transition: background 0.3s;
+    border: none; /* Убираем обводку */
+}
+
+.footer {
+    text-align: center;
+    padding: 8px;
+    background-color: var(--background-color); /* Цвет фона для подвала */
+}
+
+.social-container nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 40px; /* Увеличение отступа сверху */
+    text-align: left; /* Выравнивание текста влево */
+    padding-left: 20px; /* Отступ слева */
+}
+
+footer p {
+    font-size: 30px; /* Увеличение размера шрифта */
+    font-weight: bold; /* Жирное начертание */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 767px) {
+    .main-title {
+        font-size: 36px; /* Уменьшенный размер заголовка на мобильных устройствах */
+    }
+
+    .slogan-text {
+        font-size: 30px; /* Уменьшенный размер слогана на мобильных устройствах */
+    }
+
+    .text-content p {
+        font-size: 20px; /* Уменьшенный размер текста на мобильных устройствах */
+    }
+
+    .btn {
+        width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
+    }
+
+    .frog-image {
+        max-width: 100%; /* Увеличенная ширина изображения на мобильных устройствах */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row; 
+    }
+
+    .image-gallery {
+        flex-direction: row; 
+    }
+
+    .image-item {
+        margin: 10px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row; 
+    }
+
+    .image-gallery {
+        flex-direction: row; 
+    }
+
+    .image-item {
+        margin: 10px; 
+    }
+}
