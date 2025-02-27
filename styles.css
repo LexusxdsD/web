@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background: linear-gradient(to bottom left, black 50%, rgba(128, 0, 128, 1));
+    padding: 60px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.rounded-square {
+    padding: 60px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 10px;
+    margin-left: 300px;
+}
+
+.logo {
+    flex: 1;
+    text-align: left;
+}
+
+.logo h1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav ul li:first-child a {
+    font-weight: bolder;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px); }
+    50% { transform: translate(5px); }
+    75% { transform: translate(-5px); }
+    100% { transform: translate(0); }
+}
+
+footer {
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+.social-container {
+    display: flex; /* Отображение в строку для социальных кнопок */
+    align-items: center; /* Центрирование контента по вертикали */
+    margin-left: 40px; /* Увеличенный отступ слева для контейнера социальных кнопков */
+    padding: 10px 20px; /* Внутренние отступы для контейнера */
+    background-color: yellow; /* Желтый фон для контейнера */
+    border-radius: 5px; /* Скругление углов контейнера социальных кнопок */
+}
+
+.social-container nav ul {
+    display: flex; /* Отображение в строку для социальных кнопок */
+}
+
+.social-container nav ul li {
+    margin-left: 20px; /* Отступ между кнопками Twitter и Telegram */
+}
+
+.social-container nav a {
+    color: black; /* Цвет текста для кнопок Twitter и Telegram */
+    background-color: transparent; /* Прозрачный фон для кнопок */
+    padding: 10px 20px; /* Внутренние отступы для кнопок */
+    font-weight: bold; /* Жирный текст для кнопок */
+    transition: background 0.3s; /* Плавный переход при наведении */
+}
+
+.social-container nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Цвет фона при наведении для кнопок */
+}
+
+/* Увеличиваем отступ между кнопкой Buy Now и социальными кнопками */
+.nav-container nav ul li:first-child {
+    margin-right: 80px; /* Увеличенный отступ между кнопкой Buy Now и социальными кнопками */
+}
+
+main {
+    padding: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.intro {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: 500;
+    color: #f0e68c;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.image-item {
+    text-align: center;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    transition: transform 0.3s;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+}
+
+.image-item img {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-item p {
+    margin-top: 3px;
+    color: white;
+}
+
+.btn {
+    background-color: #800080;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #6a006a;
+}
+
+footer {
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    margin: 10% auto; 
+    padding: 15px; 
+    width: 90%; 
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px; 
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .image-gallery {
+        flex-direction: column; 
+    }
+
+    .btn {
+        width: 100%; 
+    }
+
+    main {
+        padding: 5px; 
+    }
+
+    h2 {
+        font-size: 20px; 
+    }
+
+    .intro {
+        font-size: 16px; 
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row; 
+    }
+
+    .image-gallery {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+    }
+
+    .image-item {
+        margin: 10px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row; 
+    }
+
+    .image-gallery {
+        flex-direction: row; 
+    }
+
+    .image-item {
+        margin: 10px; 
+    }
+}
