@@ -1,92 +1,69 @@
-/* Мобильная версия (Mobile) */
+/* Общие стили для кнопок */
+.btn {
+    background-color: var(--primary-color);  /* Фиолетовый фон по умолчанию */
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 5px;
+    transition: background 0.3s, transform 0.3s;  /* Плавный переход */
+}
+
+/* Эффект при наведении на обычные кнопки */
+.btn:hover {
+    background-color: var(--hover-color);  /* Более темный фиолетовый */
+    transform: scale(1.05);  /* Эффект увеличения */
+}
+
+/* Кнопка "Buy Now" */
+.btn.buy-now {
+    background-color: transparent;  /* Без фона по умолчанию */
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Эффект при наведении на кнопку "Buy Now" */
+.btn.buy-now:hover {
+    background-color: var(--primary-color);  /* Фиолетовый фон при наведении */
+    color: white;  /* Цвет текста меняется на белый */
+    transform: scale(1.05);  /* Эффект увеличения */
+}
+
+/* Социальные кнопки */
+.social-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;  /* Добавляем расстояние между кнопками */
+}
+
+.social-container nav a {
+    color: black;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Эффект при наведении на социальные кнопки */
+.social-container nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);  /* Легкое затемнение фона */
+    transform: scale(1.05);  /* Эффект увеличения */
+}
+
+/* Мобильные стили для кнопок */
 @media (max-width: 767px) {
-    body {
-        padding: 30px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-    }
-
-    .logo h1 {
-        font-size: 40px;
-    }
-
-    .main-title {
-        font-size: 36px;
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .slogan-text {
-        font-size: 30px;
-    }
-
-    .slogan-image {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .content-container {
-        display: block;
-    }
-
-    .frog-image {
-        width: 100%;
-        max-width: 400px;
-        margin-right: 0;
-    }
-
-    .text-content p {
-        font-size: 18px;
-    }
-
-    .section-title {
-        font-size: 36px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    .social-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    .btn {
+        padding: 12px 25px;  /* Меньше отступы на мобильных */
+        font-size: 18px;  /* Уменьшаем размер шрифта */
     }
 
     .social-container nav a {
-        padding: 10px;
-        font-size: 20px;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .image-gallery {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .image-item {
-        margin: 15px 0;
-        width: 100%;
-    }
-
-    .image-item img {
-        width: 100%;
-    }
-
-    .footer {
-        padding: 15px;
+        font-size: 25px;  /* Меньше размер шрифта на мобильных */
     }
 }
