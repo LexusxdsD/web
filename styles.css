@@ -209,20 +209,21 @@ nav a {
 }
 
 .btn {
-    background-color: transparent; /* Убираем фиолетовый фон */
-    color: var(--text-color);
-    border: 2px solid var(--primary-color); /* Добавляем границу только для кнопки Buy Now */
-    padding: 15px 30px; /* Увеличиваем отступы для большей высоты и ширины */
-    border-radius: 8px; /* Увеличиваем радиус скругления */
+    background-color: var(--primary-color); /* Устанавливаем цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем обводку */
+    padding: 15px; /* Увеличиваем отступы для большей высоты и ширины */
+    border-radius: 8px; /* Скругление углов */
     cursor: pointer;
     font-size: 20px; /* Увеличиваем размер шрифта */
-    margin-top: 5px;
-    transition: background 0.3s, transform 0.3s; /* Переходы для фона и увеличения */
+    margin: 10px 0; /* Отступ сверху и снизу */
+    transition: background 0.3s, transform 0.3s; /* Плавность переходов */
+    width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
 }
 
 .btn:hover {
-    background-color: var(--primary-color); /* Цвет при наведении для кнопки Buy Now */
-    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: var(--hover-color); /* Цвет при наведении для кнопки Buy Now */
+    transform: scale(1.05); /* Увеличение при наведении */
 }
 
 /* Медиазапросы для упрощения на мобильных устройствах */
@@ -270,7 +271,6 @@ nav a {
     }
 
     .btn {
-        width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
         padding: 10px; /* Уменьшение отступов для мобильных устройств */
         font-size: 18px; /* Уменьшение размера шрифта для мобильных устройств */
     }
