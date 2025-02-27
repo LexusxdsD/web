@@ -1,309 +1,92 @@
-/* Основные переменные */
-:root {
-    --primary-color: #800080;
-    --hover-color: #6a006a;
-    --background-color: rgba(128, 0, 128, 0.8);
-    --text-color: white;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Общие стили */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background: linear-gradient(to bottom left, black 50%, rgba(128, 0, 128, 1));
-    padding: 20px;  /* Уменьшаем отступы */
-    animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Слоганы и изображения */
-.slogan-container {
-    display: flex;
-    flex-direction: column;  /* Располагаем элементы вертикально */
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: slideInRight 0.5s forwards;
-    animation-delay: 0.5s;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.slogan-text {
-    font-size: 36px;  /* Уменьшаем размер шрифта */
-    font-weight: bold;
-    text-align: center;
-}
-
-.slogan-image {
-    width: 100%;
-    max-width: 400px;  /* Уменьшаем размер изображения */
-    height: auto;
-    margin-top: 20px;
-    border-radius: 5px;
-    opacity: 0;
-    animation: fadeInImage 0.5s forwards;
-}
-
-@keyframes fadeInImage {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Контейнер с контентом */
-.content-container {
-    display: flex;
-    flex-direction: column;  /* Вертикальное расположение */
-    align-items: center;
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.frog-image {
-    width: 100%;
-    max-width: 300px;  /* Уменьшаем размер изображения */
-    height: auto;
-    margin-right: 0;
-    border-radius: 10px;
-    opacity: 0;
-    animation: fadeInImage 0.5s forwards;
-}
-
-.text-content {
-    color: var(--text-color);
-    font-family: 'Comfortaa', sans-serif;
-    max-width: 90%;  /* Ограничиваем ширину */
-    margin-top: 20px;
-}
-
-.text-content p {
-    margin-bottom: 15px;
-    font-size: 18px;  /* Уменьшаем размер шрифта */
-    font-weight: bold;
-    line-height: 1.4;
-}
-
-/* Кнопки */
-.btn {
-    background-color: #800080;  /* Устанавливаем фон фиолетового цвета */
-    color: var(--text-color);
-    border: 2px solid var(--primary-color);
-    padding: 12px 20px;  /* Уменьшаем padding */
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;  /* Уменьшаем размер шрифта */
-    margin-top: 10px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-    background-color: var(--hover-color);
-    transform: scale(1.05);
-}
-
-/* Кнопка Buy Now */
-.btn.buy-now {
-    background-color: transparent;  /* Без фона по умолчанию */
-    color: var(--text-color);
-    border: 2px solid var(--primary-color);
-}
-
-.btn.buy-now:hover {
-    background-color: #800080;  /* При наведении меняем фон на фиолетовый */
-}
-
-/* Социальные кнопки */
-.social-container {
-    display: flex;
-    justify-content: center;  /* Центрируем кнопки */
-    gap: 15px;  /* Отступы между кнопками */
-    background-color: transparent;
-    margin-top: 20px;
-    flex-wrap: wrap;  /* Даем возможность кнопкам переноситься на новую строку, если нужно */
-}
-
-.social-container nav a {
-    color: black;
-    background-color: yellow;
-    padding: 10px 15px;  /* Уменьшаем отступы */
-    font-size: 22px;  /* Уменьшаем размер шрифта */
-    font-weight: bold;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-/* Навигация */
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 15px 25px;
-    font-size: 30px;  /* Уменьшаем размер шрифта */
-    font-weight: bold;
-    font-family: 'Comfortaa', sans-serif;
-}
-
-/* Стили для изображений в галерее */
-.image-gallery {
-    display: flex;
-    flex-direction: column;  /* Вертикальное отображение изображений */
-    align-items: center;
-    margin-top: 20px;
-}
-
-.image-item {
-    text-align: center;
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 5px;
-    transition: transform 0.3s;
-}
-
-.image-item:hover {
-    transform: scale(1.05);
-}
-
-.image-item img {
-    width: 80%;
-    max-width: 400px;  /* Ограничиваем ширину изображений */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.image-item p {
-    margin-top: 3px;
-    color: var(--text-color);
-}
-
-.modal {
-    display: none;
-    position: fixed; 
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    margin: 10% auto; 
-    padding: 15px; 
-    width: 90%; 
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 24px; 
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-
-/* Мобильные стили */
+/* Мобильная версия (Mobile) */
 @media (max-width: 767px) {
-    /* Главная и логотип */
-    .main-title {
-        font-size: 32px;
+    body {
+        padding: 30px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
     }
 
     .logo h1 {
-        font-size: 36px;  /* Уменьшаем размер шрифта для мобильных */
+        font-size: 40px;
     }
 
-    /* Логотип */
-    .logo-image {
-        width: 50px;  /* Уменьшаем размер логотипа для мобильных */
-        height: auto;
+    .main-title {
+        font-size: 36px;
+        text-align: center;
+        margin: 20px 0;
     }
 
-    nav a {
-        font-size: 20px;
+    .slogan-text {
+        font-size: 30px;
     }
 
-    /* Социальные кнопки */
-    .social-container {
-        flex-direction: row;  /* Теперь кнопки Twitter и Telegram будут по горизонтали */
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .social-container nav a {
-        font-size: 22px;
-        padding: 12px 20px;
-    }
-
-    /* Контент */
     .slogan-image {
         width: 100%;
-        max-width: 350px;
+        max-width: 400px;
+    }
+
+    .content-container {
+        display: block;
     }
 
     .frog-image {
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
+        margin-right: 0;
     }
 
     .text-content p {
         font-size: 18px;
     }
 
-    /* Кнопки */
+    .section-title {
+        font-size: 36px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .social-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .social-container nav a {
+        padding: 10px;
+        font-size: 20px;
+    }
+
     .btn {
-        padding: 10px 15px;  /* Уменьшаем padding для кнопок */
-        font-size: 16px;  /* Уменьшаем размер шрифта */
+        width: 100%;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .image-item {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .image-item img {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 15px;
     }
 }
