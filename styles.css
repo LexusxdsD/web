@@ -33,6 +33,19 @@ header {
     align-items: center;
     justify-content: space-between; /* Распределение пространства между элементами */
     margin-left: 50px; /* Сдвиг логотипа влево */
+    flex-wrap: wrap; /* Обеспечиваем обтекание на маленьких экранах */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.logo-image {
+    width: 100px; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота */
+    margin-right: 20px; /* Отступ справа от логотипа */
+    border-radius: 5px; /* Скругление углов логотипа */
 }
 
 .main-title {
@@ -105,25 +118,6 @@ header {
     text-align: center; /* Выравнивание по центру */
 }
 
-.logo {
-    display: flex;
-    align-items: center; /* Вертикальное выравнивание */
-}
-
-.logo-image {
-    width: 100px; /* Ширина логотипа */
-    height: auto; /* Автоматическая высота */
-    margin-right: 20px; /* Отступ справа от логотипа */
-    border-radius: 5px; /* Скругление углов логотипа */
-}
-
-.logo h1 {
-    font-size: 70px; /* Размер шрифта для названия */
-    font-weight: bold; /* Жирное начертание */
-    font-family: 'Sigmar', cursive; /* Шрифт для названия */
-    color: var(--text-color); /* Цвет текста */
-}
-
 .nav-container {
     display: flex;
     align-items: center;
@@ -184,7 +178,7 @@ nav a {
 
 .image-gallery {
     display: flex;
-    flex-direction: column; /* Упорядочиваем изображения в колонку на мобильных устройствах */
+    flex-direction: column;
     margin-top: 10px;
 }
 
@@ -242,6 +236,11 @@ nav a {
         align-items: flex-start; /* Выравнивание по левому краю */
     }
 
+    .logo-image {
+        max-width: 80%; /* Ограничиваем ширину логотипа на мобильных устройствах */
+        height: auto; /* Автоматическая высота */
+    }
+
     .main-title {
         font-size: 32px; /* Уменьшение размера заголовка на мобильных устройствах */
     }
@@ -281,5 +280,11 @@ nav a {
     .social-container {
         margin-left: 0; /* Убираем отступ слева для мобильных устройств */
         margin-top: 10px; /* Добавляем отступ сверху */
+        width: 100%; /* Ширина на всю страницу */
+        justify-content: center; /* Центрируем кнопки */
+    }
+
+    .social-container nav a {
+        font-size: 20px; /* Уменьшение размера шрифта для кнопок */
     }
 }
