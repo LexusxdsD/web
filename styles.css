@@ -31,29 +31,79 @@
     transform: scale(1.05);  /* Эффект увеличения */
 }
 
-/* Социальные кнопки */
+/* Контейнер для социальных кнопок */
+/* Контейнер для социальных кнопок */
 .social-container {
     display: flex;
-    align-items: center;
-    gap: 20px;  /* Добавляем расстояние между кнопками */
+    justify-content: center; /* Центрирование кнопок */
+    align-items: center; /* Выравнивание по вертикали */
+    background-color: yellow; /* Фоновый цвет */
+    border-radius: 5px;
+    padding: 2px 8px; /* Уменьшаем отступы внутри контейнера */
+    gap: 6px; /* Меньшие промежутки между кнопками */
+    max-width: 300px; /* Ограничиваем максимальную ширину контейнера */
+    width: auto; /* Автоматическая ширина */
 }
 
+/* Социальные кнопки */
 .social-container nav a {
     color: black;
-    background-color: transparent;
-    padding: 10px 20px;
-    font-size: 30px;
+    background-color: transparent; /* Без фона */
+    padding: 6px 12px; /* Меньше отступы в кнопках */
+    font-size: 18px; /* Уменьшаем размер шрифта */
     font-weight: bold;
+    text-decoration: none; /* Убираем подчеркивание */
     border: none;
-    transition: background 0.3s, transform 0.3s;
-    border-radius: 8px;
-    text-decoration: none;
+    transition: background-color 0.3s ease; /* Плавное изменение фона */
 }
 
 /* Эффект при наведении на социальные кнопки */
 .social-container nav a:hover {
     background-color: rgba(0, 0, 0, 0.1);  /* Легкое затемнение фона */
     transform: scale(1.05);  /* Эффект увеличения */
+}
+
+/* Специальные стили для кнопок Twitter и Telegram */
+.twitter-btn:hover {
+    background-color: #1DA1F2; /* Цвет фона для Twitter */
+    color: white; /* Белый цвет текста */
+}
+
+.telegram-btn:hover {
+    background-color: #0088cc; /* Цвет фона для Telegram */
+    color: white; /* Белый цвет текста */
+}
+
+
+/* Логотип */
+.logo-image {
+    width: 33px;  /* Уменьшаем ширину логотипа в 3 раза */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.logo h1 {
+    font-size: 23px;  /* Уменьшаем размер шрифта в 3 раза */
+    font-weight: bold;
+    font-family: 'Sigmar', cursive;
+    color: var(--text-color);
+}
+
+/* Убираем подчеркивание у ссылок */
+nav a {
+    color: var(--text-color);
+    text-decoration: none;  /* Убираем подчеркивание */
+    padding: 20px 40px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Убираем точки у списка навигации */
+nav ul {
+    display: flex;
+    list-style: none;  /* Убираем маркеры (точки) */
 }
 
 /* Мобильные стили для кнопок */
