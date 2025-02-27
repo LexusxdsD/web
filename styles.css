@@ -1,294 +1,92 @@
-:root {
-    --primary-color: #800080; /* Основной цвет кнопок */
-    --hover-color: #6a006a; /* Цвет кнопки при наведении */
-    --background-color: rgba(128, 0, 128, 0.8); /* Цвет фона для подвала */
-    --text-color: white; /* Цвет текста */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background: linear-gradient(to bottom left, black 50%, rgba(128, 0, 128, 1));
-    padding: 60px; /* Отступы для ПК */
-    animation: fadeIn 1s ease forwards; /* Анимация появления всего тела сайта */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Распределение пространства между элементами */
-    margin-left: 50px; /* Сдвиг логотипа влево */
-    flex-wrap: wrap; /* Обеспечиваем обтекание на маленьких экранах */
-}
-
-.logo {
-    display: flex;
-    align-items: center; /* Вертикальное выравнивание */
-}
-
-.logo-image {
-    width: 120px; /* Ширина логотипа для ПК */
-    height: auto; /* Автоматическая высота */
-    margin-right: 20px; /* Отступ справа от логотипа */
-}
-
-.main-title {
-    font-size: 48px; /* Увеличенный размер заголовка */
-    font-weight: 800; /* Жирное начертание */
-    color: var(--text-color); /* Цвет текста */
-    text-align: center; /* Выравнивание по центру */
-    margin: 40px 0; /* Отступ сверху и снизу для размещения ниже шапки */
-    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa */
-}
-
-.slogan-container {
-    display: flex;
-    flex-direction: column; /* Упорядочиваем элементы в колонку */
-    align-items: center; /* Центрирование по вертикали */
-    margin-bottom: 20px; /* Отступ снизу */
-}
-
-.slogan-text {
-    font-size: 50px; /* Увеличенный размер слогана */
-    font-weight: bold; /* Жирное начертание */
-    text-align: center; /* Центрируем текст */
-}
-
-.slogan-image {
-    width: 600px; /* Увеличенная ширина изображения */
-    height: auto; /* Автоматическая высота */
-    margin-left: 20px; /* Отступ слева от текста */
-    border-radius: 5px; /* Скругление углов изображения */
-}
-
-.full-width-divider {
-    height: 4px; /* Высота разделителя */
-    background-color: rgba(255, 255, 255, 0.5); /* Цвет разделителя */
-    margin: 20px 0; /* Отступы сверху и снизу */
-    width: 100%; /* Полная ширина */
-}
-
-.content-container {
-    display: flex;
-    align-items: center; /* Выравнивание по центру по вертикали */
-    margin: 40px 0; /* Отступы сверху и снизу */
-}
-
-.frog-image {
-    width: 600px; /* Увеличенная ширина изображения */
-    height: auto; /* Автоматическая высота */
-    margin-right: 40px; /* Увеличение отступа справа от изображения */
-    border-radius: 10px; /* Скругление углов изображения */
-}
-
-.text-content {
-    color: var(--text-color); /* Цвет текста */
-    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa */
-    max-width: 800px; /* Увеличение ширины текста для уменьшения столбиков */
-}
-
-.text-content p {
-    margin-bottom: 15px; /* Уменьшение отступа между абзацами */
-    font-size: 24px; /* Увеличение размера шрифта */
-    font-weight: bold; /* Установка жирного начертания */
-    line-height: 1.4; /* Увеличение межстрочного интервала для лучшей читаемости */
-}
-
-.section-title {
-    font-size: 48px; /* Увеличенный размер шрифта для заголовка */
-    font-weight: bold; /* Жирное начертание */
-    font-family: 'Sigmar', cursive; /* Шрифт для заголовка */
-    color: var(--text-color); /* Цвет текста */
-    margin-bottom: 10px; /* Отступ снизу */
-    text-align: center; /* Выравнивание по центру */
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;
-}
-
-nav {
-    display: flex;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 50px;
-}
-
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 20px 40px;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 'Comfortaa', sans-serif; /* Применение шрифта Comfortaa к навигационным ссылкам */
-}
-
-.social-container {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-    padding: 20px 40px; /* Увеличенные отступы */
-    background-color: yellow;
-    border-radius: 5px;
-}
-
-.social-container nav a {
-    color: black;
-    background-color: transparent;
-    padding: 10px 20px;
-    font-size: 30px;
-    font-weight: bold;
-    transition: background 0.3s;
-    border: none; /* Убираем обводку */
-}
-
-.footer {
-    text-align: center;
-    padding: 8px;
-    background-color: var(--background-color); /* Цвет фона для подвала */
-}
-
-.social-container nav a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.image-gallery {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.image-item {
-    text-align: center;
-    margin: 5px 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 5px;
-    transition: transform 0.3s;
-}
-
-.image-item:hover {
-    transform: scale(1.05);
-}
-
-.image-item img {
-    width: 80%;
-    max-width: 700px; /* Максимальная ширина изображения */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.image-item p {
-    margin-top: 3px;
-    color: var(--text-color);
-}
-
-.btn {
-    background-color: var(--primary-color); /* Устанавливаем цвет фона кнопки */
-    color: white; /* Цвет текста */
-    border: none; /* Убираем обводку */
-    padding: 15px; /* Увеличиваем отступы для большей высоты и ширины */
-    border-radius: 8px; /* Скругление углов */
-    cursor: pointer;
-    font-size: 20px; /* Увеличиваем размер шрифта */
-    margin: 10px 0; /* Отступ сверху и снизу */
-    transition: background 0.3s, transform 0.3s; /* Плавность переходов */
-    width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
-}
-
-.btn:hover {
-    background-color: var(--hover-color); /* Цвет при наведении для кнопки Buy Now */
-    transform: scale(1.05); /* Увеличение при наведении */
-}
-
-/* Медиазапросы для упрощения на мобильных устройствах */
+/* Мобильная версия (Mobile) */
 @media (max-width: 767px) {
     body {
-        padding: 20px; /* Уменьшаем паддинг для мобильных устройств */
+        padding: 30px;
     }
 
     header {
-        flex-direction: column; /* Упорядочиваем заголовок в колонку на мобильных устройствах */
-        align-items: flex-start; /* Выравнивание по левому краю */
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
     }
 
-    .logo-image {
-        width: 100px; /* Ширина логотипа на мобильных устройствах */
-        height: auto; /* Автоматическая высота */
+    .logo h1 {
+        font-size: 40px;
     }
 
     .main-title {
-        font-size: 32px; /* Уменьшение размера заголовка на мобильных устройствах */
+        font-size: 36px;
+        text-align: center;
+        margin: 20px 0;
     }
 
     .slogan-text {
-        font-size: 24px; /* Уменьшение размера слогана */
-        text-align: center; /* Центрируем текст на мобильных устройствах */
+        font-size: 30px;
     }
 
     .slogan-image {
-        width: 100%; /* Полная ширина для адаптивности */
-        height: auto; /* Автоматическая высота */
+        width: 100%;
+        max-width: 400px;
     }
 
     .content-container {
-        flex-direction: column; /* Упорядочиваем контент в колонку на мобильных устройствах */
-        align-items: center; /* Центрирование по горизонтали */
+        display: block;
     }
 
     .frog-image {
-        width: 100%; /* Полная ширина для адаптивности */
-        max-width: none; /* Убираем максимальную ширину */
+        width: 100%;
+        max-width: 400px;
+        margin-right: 0;
     }
 
     .text-content p {
-        font-size: 18px; /* Уменьшение размера текста */
+        font-size: 18px;
     }
 
-    .btn {
-        padding: 10px; /* Уменьшение отступов для мобильных устройств */
-        font-size: 18px; /* Уменьшение размера шрифта для мобильных устройств */
+    .section-title {
+        font-size: 36px;
     }
 
     nav ul {
-        flex-direction: column; /* Упорядочиваем навигацию в колонку */
-        width: 100%; /* Ширина на всю страницу */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
     }
 
     .social-container {
-        margin-left: 0; /* Убираем отступ слева для мобильных устройств */
-        margin-top: 10px; /* Добавляем отступ сверху */
-        width: 100%; /* Ширина на всю страницу */
-        justify-content: center; /* Центрируем кнопки */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .social-container nav a {
-        font-size: 20px; /* Уменьшение размера шрифта для кнопок */
-        padding: 10px; /* Уменьшение отступов для кнопок */
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .image-item {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .image-item img {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 15px;
     }
 }
