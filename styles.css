@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Comfortaa', cursive; /* Шрифт для всего текста */
     color: var(--text-color);
     background: linear-gradient(to bottom left, black 50%, rgba(128, 0, 128, 1));
     padding: 20px;
@@ -43,40 +43,9 @@ header {
 }
 
 .logo-text h1 {
+    font-family: 'Sigmar', cursive; /* Применяем шрифт Sigmar для заголовка */
     font-size: 24px; /* Размер шрифта для заголовка */
     margin: 0; /* Убираем отступы */
-}
-
-.social-container {
-    display: flex;
-    justify-content: flex-end; /* Выровнять по правому краю */
-    margin-top: 10px; /* Уменьшенные отступы */
-    position: absolute; /* Абсолютное позиционирование для перемещения */
-    top: 10px; /* Отступ от верхней грани */
-    right: 10px; /* Отступ от правой грани */
-}
-
-.nav-container {
-    display: flex;
-    flex-direction: column; /* Вертикальное выравнивание для кнопок */
-    align-items: flex-end; /* Выровнять по правому краю */
-    margin-top: 10px; /* Отступ сверху для размещения под желтым контейнером */
-}
-
-/* Остальной CSS остаётся без изменений */
-
-nav ul {
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 5px;
-}
-
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
 }
 
 .social-container {
@@ -94,7 +63,6 @@ nav a {
     padding: 10px; /* Увеличенные отступы внутри контейнера */
     display: flex;
     align-items: center; /* Центрирование по вертикали */
-    gap: 4px; /* Промежутки между кнопками */
 }
 
 .social-buttons .btn {
@@ -109,11 +77,19 @@ nav a {
 }
 
 .social-buttons .twitter-icon {
-    width: 45px; /* Увеличенный размер значка Twitter */
-    height: 45px; /* Увеличенный размер значка Twitter */
+    width: 45px; /* Размер значка Twitter */
+    height: 35px; /* Размер значка Twitter */
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание для кнопок */
+    align-items: flex-end; /* Выровнять по правому краю */
+    margin-top: 10px; /* Отступ сверху для размещения под желтым контейнером */
 }
 
 .main-title {
+    font-family: 'Sigmar', cursive; /* Применяем шрифт Sigmar для заголовка */
     font-size: 24px;
     text-align: center;
     margin: 20px 0;
@@ -169,6 +145,7 @@ nav a {
 }
 
 .section-title {
+    font-family: 'Sigmar', cursive; /* Применяем шрифт Sigmar для заголовка секции */
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
