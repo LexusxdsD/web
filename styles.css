@@ -21,7 +21,8 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Выровнять по левому краю */
+    position: relative; /* Относительное позиционирование для контейнера */
 }
 
 .logo {
@@ -63,25 +64,36 @@ nav a {
 
 .social-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Выровнять по правому краю */
     margin-top: 10px; /* Уменьшенные отступы */
+    position: absolute; /* Абсолютное позиционирование для перемещения */
+    top: 10px; /* Отступ от верхней грани */
+    right: 10px; /* Отступ от правой грани */
 }
 
 .social-buttons {
     background-color: yellow; /* Цвет фона для кнопок */
     border-radius: 8px; /* Закругленные края */
-    padding: 10px; /* Отступы внутри контейнера */
+    padding: 10px; /* Увеличенные отступы внутри контейнера */
     display: flex;
-    gap: 10px; /* Промежутки между кнопками */
+    align-items: center; /* Центрирование по вертикали */
+    gap: 4px; /* Промежутки между кнопками */
 }
 
 .social-buttons .btn {
-    color: black; /* Цвет текста кнопок */
-    padding: 10px 15px; /* Отступы для кнопок */
-    font-size: 14px; /* Размер шрифта для кнопок */
-    text-decoration: none; /* Убираем подчеркивание */
+    padding: 0; /* Убираем отступы */
     border: none; /* Убираем рамку */
-    border-radius: 5px; /* Закругленные края кнопок */
+}
+
+.social-buttons .social-icon {
+    width: 25px; /* Размер иконки для Telegram */
+    height: 25px; /* Размер иконки для Telegram */
+    object-fit: contain; /* Сохраняем пропорции */
+}
+
+.social-buttons .twitter-icon {
+    width: 45px; /* Увеличенный размер значка Twitter */
+    height: 45px; /* Увеличенный размер значка Twitter */
 }
 
 .main-title {
@@ -150,6 +162,7 @@ nav a {
     padding: 10px 20px; /* Размеры кнопок */
     border-radius: 5px; 
     font-size: 14px; /* Размер шрифта для кнопок */
+    text-align: center; /* Центрировать текст кнопки */
 }
 
 .btn.buy-now {
@@ -157,6 +170,7 @@ nav a {
     border: 2px solid var(--primary-color); /* Фиолетовая рамка */
     color: var(--primary-color);
     transition: background 0.3s, transform 0.3s;
+    margin-top: 10px; /* Отступ сверху */
 }
 
 .btn.buy-now:hover {
